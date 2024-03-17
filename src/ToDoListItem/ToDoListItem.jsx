@@ -1,41 +1,36 @@
 import { useState } from "react";
-import styled from "@emotion/styled";
-
-const Dropdown = styled.div`
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
-  z-index: 1;
-`;
-
-const ListItem = styled.li`
-  position: relative;
-`;
+import PropTypes from 'prop-types';
+import styles from './ToDoListItem.module.css';
 
 export function ToDoListItem({ todo, steps }) {
   const [hover, setHover] = useState(false);
 
   return (
-    <ListItem className ="Ddown"
+    <li className={styles.Ddown}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       {todo}
       {hover && (
-        <Dropdown>
+        <div className={styles.dropdown}>
           {steps.map(function (step, index) {
             return (
-              <p className = "pstep" key={index}>
-                Step {index + 1} for {todo}: {step}
+              <p className={styles.pstep} key={index}>
+                <h4>{todo} </h4>
+                <h5> Step: {index + 1} </h5>
+                <h4> {step} </h4>
               </p>
             );
           })}
-        </Dropdown>
+        </div>
       )}
-    </ListItem>
+    </li>
   );
 }
+
+ToDoListItem.propTypes = {
+  todo: PropTypes.string.isRequired,
+  steps: PropTypes.array.isRequired,
+};
 
 export default ToDoListItem;

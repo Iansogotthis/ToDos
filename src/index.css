@@ -7,8 +7,9 @@
 
 }
 .App h1{
-  
-  background-color: chocolate;
+  color: rgb(122, 164, 37);
+  background-color: rgba(209, 96, 15, 0.767);
+text-decoration-style: double;
 }
 
 .List{
@@ -24,17 +25,17 @@ ul {
 
 li {
   font-size: 20px;
-  background-color: aqua;
+  background-color: #00ffff;
   border: 2px solid blanchedalmond;
   color: brown;
 text-shadow: 14% 14% 14% aquamarine;
   padding: 1rem;
   margin: 1rem;
-  border-radius: 20%
+  
 }
 li:hover{
-  color: aqua;
-  background-color: brown;
+  color: green;
+  background-color: rgba(216, 183, 51, 0.778);
   border: 2px solid aquamarine;
   border-radius: 20%;
   text-transform: uppercase;
@@ -47,8 +48,3 @@ li:hover{
   text-rendering: geometricPrecision;
 }
 
-.dDown{
-  background-color: lightcoral;
-  color: lightgoldenrodyellow;
-  text-rendering: geometricPrecision;
-}

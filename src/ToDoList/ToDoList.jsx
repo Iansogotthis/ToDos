@@ -1,4 +1,4 @@
-import { ToDoListItem } from "../ToDoListItem/ToDoListItem";
+import  ToDoListItem  from "../ToDoListItem/ToDoListItem";
 
 export default function ToDoList({ todos }) {
   const steps = ["practice", "project", "prioritize"];
