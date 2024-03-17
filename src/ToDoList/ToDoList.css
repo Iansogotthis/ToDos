@@ -1,0 +1,26 @@
+.todoList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .todoList li {
+    font-size: 20px;
+    background-color: var(--list-item-bg-color);
+    border: 2px solid var(--list-item-border-color);
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 80%;
+    text-align: left;
+  }
+  
+  .todoList li:hover {
+    color: var(--list-item-hover-color);
+    background-color: var(--list-item-hover-bg-color);
+    border: 2px solid var(--list-item-hover-border-color);
+    border-radius: 20%;
+    text-transform: uppercase;
+  }
