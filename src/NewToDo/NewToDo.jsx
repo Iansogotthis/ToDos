@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-export default function NewToDo({ addTodo }) {  // Destructure addTodo from props here
+export default function NewToDo({ addTodo }) {
+  // Destructure addTodo from props here
   const [newToDo, setNewToDo] = useState("");
 
   const handleInputChange = (e) => {
@@ -8,19 +9,22 @@ export default function NewToDo({ addTodo }) {  // Destructure addTodo from prop
   };
 
   function handleAddTodo() {
+    evt.preventDefault();
     addTodo(newToDo);
     setNewToDo("");
   }
 
   return (
     <>
-      <h2>New To-Do</h2>
-      <input 
-        placeholder="New To-Do"
-        value={newToDo} 
-        onChange={handleInputChange}
-      />
-      <button onClick={handleAddTodo}>ADD TO-DO</button>
+      <h2></h2>
+      <form title="New To-Do" onSubmit={handleAddTodo}>
+        <input
+          placeholder="New To-Do"
+          value={newToDo}
+          onChange={handleInputChange}
+        />
+        <button onClick={handleAddTodo}>ADD TO-DO</button>
+      </form>
     </>
   );
 }

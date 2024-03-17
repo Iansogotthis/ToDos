@@ -13,7 +13,8 @@ export default function App() {
   const [showTodos, setShowTodos] = useState(true);
 
   function addTodo(todo) {
-    setTodos([...todos, todo]);
+    setTodos([...todos, todo])
+    setNewToDo("")    ;
   }
 
   return (
