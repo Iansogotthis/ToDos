@@ -1,14 +1,15 @@
-import { ToDoListItem } from "../ToDoListItem/ToDoListItem";
+import ToDoListItem from "../ToDoListItem/ToDoListItem";
+import PropTypes from "prop-types";
 
 export default function ToDoList({ todos }) {
-  const toDoListItems = todos.map(function(todo, index) {
-    
-    return <ToDoListItem key={index} todo={ `${index  + 1}. ${todo}`} />;
-  });
+  function createToDoListItem(todo, index) {
+    return <ToDoListItem key={index} todo={todo} index={index + 1} />;
+  }
 
-  return (
-    <ul>
-      {toDoListItems}
-    </ul>
-  );
+  const toDoListItems = todos.map(createToDoListItem);
+
+  return <ul>{toDoListItems}</ul>;
 }
+ToDoList.propTypes = {
+  todos: PropTypes.array.isRequired,
+};
